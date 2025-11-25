@@ -1,10 +1,11 @@
-<footer id="footer" class="fixed-footer">
+<!-- フッター -->
+<footer>
   <p>&copy; {{ site.time | date: "%Y" }} Kaisei Information Technologies</p>
 </footer>
 
 <script>
   function adjustFooter() {
-    var footer = document.getElementById('footer');
+    var footer = document.querySelector('footer');
     var bodyHeight = document.body.offsetHeight;
     var windowHeight = window.innerHeight;
     

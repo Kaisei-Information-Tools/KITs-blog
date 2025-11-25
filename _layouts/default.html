@@ -54,36 +54,25 @@
     />
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-sm">
-        <div class="container-fluid">
-          <a href="https://www.kits-tools.net/" class="navbar-brand"
-            ><img
-              src="{{ site.url }}{{ site.baseurl }}/assets/images/logo.svg"
-              width="32px"
-              alt="KITs"
-          /></a>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-              <a href="{{ site.url }}{{ site.baseurl }}" class="nav-link"
-                >{{ site.title }}</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                href="{{ site.url }}{{ site.baseurl }}/archive/"
-                class="nav-link"
-                >アーカイブ</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="https://www.kits-tools.net" class="nav-link">KITsへ</a>
-            </li>
-          </ul>
-        </div>
+    <!-- ヘッダー -->
+    <header class="header">
+      <div class="logo">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/logo.svg" width="32" alt="KITs">
+      </div>
+      <nav class="nav">
+        <a href="{{ site.url }}{{ site.baseurl }}">Blog</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/archive/">アーカイブ</a>
+        <a href="https://www.kits-tools.net/">KITs</a>
       </nav>
     </header>
-    <main class="main-content"><div class="container">{{ content }}</div></main>
+
+    <!-- メイン -->
+    <main class="main">
+      <div class="page-content">
+        {{ content }}
+      </div>
+    </main>
+
     {% include footer.html %}
   </body>
 </html>
