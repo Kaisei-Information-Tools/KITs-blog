@@ -40,8 +40,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow-x: visible;
-  font-family: sans-serif;
+  overflow-x: hidden;
   background: linear-gradient(
     135deg,
     var(--bg-gradient-start) 0%,
@@ -119,8 +118,7 @@ body {
 // Main layout container
 .main {
   min-height: 100vh;
-  padding-top: 60px;
-  margin-top: 6rem;
+  padding-top: 100px;
 }
 
 // Page content wrapper
@@ -201,58 +199,6 @@ h1 {
   color: var(--text-primary);
 }
 
-// --- ハンバーガーメニュー ---
-.menu {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 200;
-}
-
-.menu span {
-  display: block;
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  background-color: black;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-}
-
-.menu span:nth-of-type(1) {
-  transform: translateY(-6px);
-}
-
-.menu span:nth-of-type(2) {
-  transform: translateY(0);
-}
-
-.menu span:nth-of-type(3) {
-  transform: translateY(6px);
-}
-
-#menu:checked ~ .header .menu span:nth-of-type(1) {
-  transform: rotate(45deg);
-}
-
-#menu:checked ~ .header .menu span:nth-of-type(2) {
-  opacity: 0;
-}
-
-#menu:checked ~ .header .menu span:nth-of-type(3) {
-  transform: rotate(-45deg);
-}
-
-#menu {
-  display: none;
-}
-
 // レスポンシブ対応
 @media (max-width: 800px) {
   .header {
@@ -276,7 +222,6 @@ h1 {
 @media (max-width: 600px) {
   .nav a {
     font-size: 0.9rem !important;
-    margin: 2px 4px;
     padding: 2px 10px;
     white-space: nowrap !important;
     margin: 10px 5px;
@@ -286,19 +231,8 @@ h1 {
   }
 }
 
-@media (max-width: 800px) and (min-width: 601px) {
-  .header {
-    height: 60px;
-  }
-}
-
-@media (max-width: 1300px) and (min-width: 1200px) {
-  .header {
-    height: 60px;
-  }
-}
-
-@media (max-width: 1000px) and (min-width: 801px) {
+// Consistent header height across all screen sizes
+@media (max-width: 1300px) {
   .header {
     height: 60px;
   }
